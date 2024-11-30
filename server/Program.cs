@@ -12,7 +12,15 @@ builder.Services.AddDbContext<AppDbContext>(
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddIdentityApiEndpoints<AppUser>()
+builder.Services.AddIdentityApiEndpoints<AppUser>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 4;
+    options.Password.RequireLowercase = false;
+    options.Password.RequiredUniqueChars = 0;
+})
     .AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
@@ -24,13 +32,26 @@ var apiGroup = app.MapGroup("/api");
 
 var authGroup = apiGroup.MapGroup("/auth");
 
-authGroup.MapIdentityApi<AppUser>().WithTags("Auth");
+authGroup.MapCustomeIdentityApi<AppUser>().WithTags("Auth");
 
-apiGroup.MapGet("/", () => Results.Ok("API root"))
-    .WithTags("General");
+apiGroup.MapGet("/no-auth", () => Results.Ok("no-auth response"))
+    .WithTags("Test");
+    
+apiGroup.MapGet("/auth", () => Results.Ok("auth response"))
+    .WithTags("Test")
+    .RequireAuthorization();
 
 app.MapGet("/", () => Results.Redirect("/swagger/index.html"))
     .ExcludeFromDescription();
+
+apiGroup.MapGet("/users",(AppDbContext db) => db.Users.Select(u=>new UserDTO 
+{
+    Address = u.Address!,
+    Email = u.Email!,
+    FullName = u.FullName!,
+    Nin = u.Nin!,
+    Phone = u.PhoneNumber!
+}).ToList());
 
 app.Run("http://localhost:5000");
 
@@ -38,10 +59,17 @@ public class AppDbContext : IdentityDbContext<AppUser>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) :
         base(options)
-    { }
+    { 
+        Database.EnsureCreated();
+    }
 }
 
 public class AppUser : IdentityUser
 {
-
+    public string? FullName { get; set; }
+    public string? Nin { get; set; }
+    public string? Address { get; set; }
 }
+
+
+    

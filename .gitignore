@@ -1,0 +1,3 @@
+server/app.db
+server/app.db-shm
+server/app.db-wal
