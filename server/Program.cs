@@ -23,6 +23,8 @@ builder.Services.AddIdentityApiEndpoints<AppUser>(options =>
 })
     .AddEntityFrameworkStores<AppDbContext>();
 
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 app.UseSwagger();
@@ -44,8 +46,9 @@ apiGroup.MapGet("/auth", () => Results.Ok("auth response"))
 app.MapGet("/", () => Results.Redirect("/swagger/index.html"))
     .ExcludeFromDescription();
 
-apiGroup.MapGet("/users",(AppDbContext db) => db.Users.Select(u=>new UserDTO 
+apiGroup.MapGet("/users",(AppDbContext db) => db.Users.Select(u=>new UserDTO
 {
+    Id = u.Id!,
     Address = u.Address!,
     Email = u.Email!,
     FullName = u.FullName!,
@@ -53,23 +56,10 @@ apiGroup.MapGet("/users",(AppDbContext db) => db.Users.Select(u=>new UserDTO
     Phone = u.PhoneNumber!
 }).ToList());
 
+app.MapControllers();
+
 app.Run("http://localhost:5000");
 
-public class AppDbContext : IdentityDbContext<AppUser>
-{
-    public AppDbContext(DbContextOptions<AppDbContext> options) :
-        base(options)
-    { 
-        Database.EnsureCreated();
-    }
-}
-
-public class AppUser : IdentityUser
-{
-    public string? FullName { get; set; }
-    public string? Nin { get; set; }
-    public string? Address { get; set; }
-}
 
 
     

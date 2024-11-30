@@ -10,6 +10,7 @@ public class RegisterDTO
 
 public class UserDTO
 {
+    required public string Id { get; set; }
     required public string FullName { get; set; }
     required public string Nin { get; set; }
     required public string Address { get; set; }
