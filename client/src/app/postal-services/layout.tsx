@@ -5,8 +5,8 @@ export default function DashboardLayout({
         children: React.ReactNode
     }) {
     return (
-        <section>
-            <div className="lg:hidden">
+        <section  className="m-6">
+            <div className="lg:hidden fixed right-2 top-2 h-full">
                 <MobileNav />
             </div>
             <div className="hidden lg:block">

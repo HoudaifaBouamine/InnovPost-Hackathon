@@ -1,12 +1,9 @@
 import React from "react";
-
+import MenuBar from "./menu";
 const MobileNav: React.FC = () => {
   return (
-    <nav>
-     Mobile nav bar
-    </nav>
+    <MenuBar />
   );
 };
 
 export default MobileNav;
-
