@@ -1,9 +1,9 @@
-import Image from "next/image";
+// import Image from "next/image";
 
-export default function Home() {
+export default function ServicePostal() {
   return (
-    <div>
-      Hello World !
+    <div >
+    Service Postal
     </div>
   );
 }
