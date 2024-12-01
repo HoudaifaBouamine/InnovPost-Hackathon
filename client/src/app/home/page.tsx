@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
           width={100}
           height={30}
         />
-        <div className="inset-0 flex items-center justify-center w-full h-full">
+        <div className="inset-0 flex items-center justify-center w-full h-full px-32">
           <div className="absolute pt-24  transform -translate-y-1/2 flex flex-row justify-around gap-4 px-16 mx-16">
             {cards.map((card, index) => (
               <div key={index} className="bg-white shadow-md rounded-lg p-4">
