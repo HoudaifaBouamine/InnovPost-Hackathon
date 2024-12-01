@@ -6,10 +6,10 @@ export default function DashboardLayout({
     }) {
     return (
         <section  className="m-6">
-            <div className="lg:hidden fixed right-2 top-2 h-full">
+            <div className=" xl:hidden fixed right-2 top-2 h-full">
                 <MobileNav />
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden xl:block">
                 <Nav />
             </div>
             <main>

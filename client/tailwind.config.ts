@@ -17,24 +17,8 @@ export default {
         foreground: "#555555", // Foreground color
       },
       fontFamily: {
-        eurostile: [
-          "EurostileRegular", // Reference to your local font
-          "Arial",
-          "Helvetica",
-          "sans-serif",
-        ],
-        eurostileExtended: [
-          "EurostileExtended", // Reference to extended font
-          "Arial",
-          "Helvetica",
-          "sans-serif",
-        ],
-        eurostileBold: [
-          "EurostileBold", // Reference to bold font
-          "Arial",
-          "Helvetica",
-          "sans-serif",
-        ],
+        michroma: ["Michroma", "sans-serif"], // Adding Michroma font
+        roboto: ["Roboto Condensed", "sans-serif"], // Adding Roboto Condensed font
       },
       screens: {
         xs: "480px",

@@ -2,38 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define local fonts */
-@font-face {
-  font-family: 'EurostileRegular';
-  src: url('/fonts/EurostileRegular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'EurostileExtended';
-  src: url('/fonts/EurostileExtended.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'EurostileBold';
-  src: url('/fonts/EurostileBold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* Apply fonts globally */
+/* Apply Inter font globally */
 @layer base {
   body {
-    font-family: 'EurostileRegular', Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
     @apply bg-background text-foreground; /* Ensure proper background and text color */
   }
 
   :root {
     --background: #ffffff; /* Light background color */
-   /* Primary text color */
     --primary: #22297C;    /* Primary color */
     --secondary: #FFD101;  /* Secondary color */
     --radius: 0.5rem;      /* Border radius */
@@ -43,18 +20,16 @@
     --background: #22297C; /* Dark background color */
     --foreground: #ffffff; /* Light text color for dark mode */
     --primary: #22297C;    /* Light primary color for dark mode */
-    --secondary:  #FFD101;  /* Dark secondary color for dark mode */
+    --secondary: #FFD101;  /* Dark secondary color for dark mode */
   }
-
 }
 
 /* Navigation Styles */
 .nav-link {
   transition: color 0.3s ease, transform 0.3s ease;
-  
-padding: 1rem 2rem 1rem 2rem;
-
+  padding: 1rem 2rem 1rem 2rem;
 }
+
 .nav-link:hover {
   color: var(--primary); /* Hover color */
   transform: scale(1.1); /* Slightly enlarge the link on hover */
@@ -64,7 +39,8 @@ padding: 1rem 2rem 1rem 2rem;
   color: var(--primary); /* Active color */
   border-bottom: 2px solid var(--primary); /* Underline active link */
 }
-.buttons{
+
+.buttons {
   width: 120px;
-height: 50px;
+  height: 50px;
 }

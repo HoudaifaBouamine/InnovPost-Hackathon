@@ -1,38 +1,8 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Metadata } from "next";
 import "./globals.css";
-
-// Define Eurostile fonts
-const eurostileBold = localFont({
-  src: "./fonts/EurostileBold.ttf",
-  variable: "--font-eurostile-bold",
-  weight: "700",
-});
-
-const eurostileCondensedBold = localFont({
-  src: "./fonts/EurostileCnd-Bold Regular.ttf",
-  variable: "--font-eurostile-condensed-bold",
-  weight: "700",
-});
-
-const eurostileExtendedBold = localFont({
-  src: "./fonts/EurostileExt-Bold Regular.ttf",
-  variable: "--font-eurostile-extended-bold",
-  weight: "700",
-});
-
-const eurostileExtendedNormal = localFont({
-  src: "./fonts/EurostileExt-Normal Regular.ttf",
-  variable: "--font-eurostile-extended-normal",
-  weight: "400",
-});
-
-const eurostileOblique = localFont({
-  src: "./fonts/EurostileOblique.ttf",
-  variable: "--font-eurostile-oblique",
-  style: "italic",
-  weight: "400",
-});
+import { Suspense } from "react";
+import Loading from "./loading";
+import Nav from "./postal-services/nav";
 
 // Define Metadata
 export const metadata: Metadata = {
@@ -43,15 +13,21 @@ export const metadata: Metadata = {
 // Root Layout Component
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${eurostileBold.variable} ${eurostileCondensedBold.variable} ${eurostileExtendedBold.variable} ${eurostileExtendedNormal.variable} ${eurostileOblique.variable} antialiased`}
-      >
-        {children}
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Roboto+Condensed:wght@100..900&display=swap" rel="stylesheet" />
+      </head>
+      <body className=" font-roboto">
+        <Suspense fallback={<Loading />}>
+          <Nav />
+          <div className="bg-primary">{children}</div>
+        </Suspense>
       </body>
     </html>
   );
