@@ -24,8 +24,12 @@ builder.Services.AddIdentityApiEndpoints<AppUser>(options =>
     .AddEntityFrameworkStores<AppDbContext>();
 
 builder.Services.AddControllers();
-
+builder.Services.AddCors(a=>a.AddPolicy("AllowAll", policy=>policy.WithOrigins("http://localhost:3001")
+      .AllowCredentials()));
+      
 var app = builder.Build();
+
+app.UseCors("AllowAll");
 
 app.UseSwagger();
 app.UseSwaggerUI();
