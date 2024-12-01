@@ -25,7 +25,7 @@ const MenuBar: React.FC = () => {
     ];
     return (
         <Sheet>
-            <SheetTrigger><AlignRight className="text-primary transition-all size-10 hover:text-secondary" /></SheetTrigger>
+            <SheetTrigger ><AlignRight height={30} width={50}  className="transition-all text-secondary  hover:text-white z-50" /></SheetTrigger>
             <SheetContent side="left">
                 <SheetHeader>
                     <SheetTitle className="my-6">            <Image src="/Logo.svg" alt="Logo" width={68} height={81} />
