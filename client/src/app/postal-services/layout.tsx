@@ -1,4 +1,4 @@
-import Header from "./header"
+
 export default function DashboardLayout({
     children,
 }: {
@@ -6,7 +6,7 @@ export default function DashboardLayout({
 }) {
     return (
         <section >
-            <Header/>
+        
             <main>
                 {children}
             </main>

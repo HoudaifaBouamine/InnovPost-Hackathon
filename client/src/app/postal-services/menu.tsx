@@ -17,7 +17,7 @@ import SignButton from "./SignButton";
 const MenuBar: React.FC = () => {
     const pathName = usePathname();
     const navItems = [
-        { name: "Home", path: "/postal-services/home" },
+        { name: "Home", path: "/home" },
         { name: "Services", path: "/postal-services/services" },
         { name: "Online services", path: "/postal-services/online-services" },
         { name: "Philately", path: "/postal-services/philately" },
@@ -25,7 +25,7 @@ const MenuBar: React.FC = () => {
     ];
     return (
         <Sheet>
-            <SheetTrigger ><AlignRight height={30} width={50}  className="transition-all text-secondary  hover:text-white z-50" /></SheetTrigger>
+            <SheetTrigger ><AlignRight height={30} width={50}  className="transition-all text-secondary  hover:text-primary z-50" /></SheetTrigger>
             <SheetContent side="left">
                 <SheetHeader>
                     <SheetTitle className="my-6">            <Image src="/Logo.svg" alt="Logo" width={68} height={81} />
@@ -41,8 +41,8 @@ const MenuBar: React.FC = () => {
                             ))}
                         </div>
                         <div className="ml-auto flex flex-row space-x-4 ">
-                            <SignButton content="Sign in" color="primary" backgroundColor="white" />
-                            <SignButton content="Sign up" color="white" backgroundColor="primary" />
+                        <SignButton content="Sign in" color="primary" backgroundColor="white" OnClickHandler={() => { window.location.href = '/login'; }}/>
+                        <SignButton content="Sign up" color="white" backgroundColor="primary" OnClickHandler={() => { window.location.href = '/register'; }}/>
                             <Image src="/globe.svg" alt="Logo" width={42} height={42} />
                         </div>
                     </SheetDescription>

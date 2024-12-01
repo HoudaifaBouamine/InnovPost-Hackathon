@@ -28,8 +28,8 @@ const Nav: React.FC = () => {
                 ))}
             </div>
             <div className="ml-auto flex space-x-4 ">
-                <SignButton content="Sign in" color="primary" backgroundColor="white"/>
-                <SignButton content="Sign up" color="white" backgroundColor="primary" />
+                <SignButton content="Sign in" color="primary" backgroundColor="white" OnClickHandler={() => { window.location.href = '/login'; }}/>
+                <SignButton content="Sign up" color="white" backgroundColor="primary" OnClickHandler={() => { window.location.href = '/register'; }}/>
                 <Image src="/globe.svg" alt="Logo" width={42} height={42} />
             </div>
         </nav>
