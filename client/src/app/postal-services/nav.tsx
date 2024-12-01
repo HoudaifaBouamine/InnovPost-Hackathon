@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 const Nav: React.FC = () => {
     const navItems = [
-        { name: "Home", path: "/postal-services/home" },
+        { name: "Home", path: "/home" },
         { name: "Services", path: "/postal-services/services" },
         { name: "Online services", path: "/postal-services/online-services" },
         { name: "Philately", path: "/postal-services/philately" },
@@ -17,7 +17,7 @@ const Nav: React.FC = () => {
     const pathName = usePathname();
 
     return (
-        <nav className="p-4 flex items-center my-4">
+        <nav className="p-4 flex items-center mb-4 bg-background">
             <Image src="/Logo.svg" alt="Logo" width={68} height={81} />
             <div className="flex space-x-12 mx-auto">
                 {navItems.map((item, index) => (
