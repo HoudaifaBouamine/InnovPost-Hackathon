@@ -39,12 +39,10 @@ Here are a few snapshots from the **prototype design**:
 ![Screenshot from 2024-12-02 18-47-31](https://github.com/user-attachments/assets/c86cb3ab-144d-49a9-b109-82463211aed0)
 
 ### Package Tracking  
+![Screenshot from 2024-12-02 18-51-29](https://github.com/user-attachments/assets/2d295e77-c9a7-4314-9496-1b1370fd1e23)
 
-![Uploading Track.svg…]()
+![Screenshot from 2024-12-02 18-51-19](https://github.com/user-attachments/assets/04f15703-62e3-428b-9730-9ed40199e4d9)
 
-### Notifications  
-
-![Uploading Screenshot from 2024-12-02 18-51-19.png…]()
 
 ---
 
