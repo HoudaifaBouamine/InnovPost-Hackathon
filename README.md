@@ -40,10 +40,8 @@ Here are a few snapshots from the **prototype design**:
 
 ### Package Tracking  
 
-![Uploading Screenshot from 2024-12-02 18-54-44.png…]()
-
-![Screenshot from 2024-12-02 18-51-19](https://github.com/user-attachments/assets/04f15703-62e3-428b-9730-9ed40199e4d9)
-
+![Screenshot from 2024-12-02 18-54-44](https://github.com/user-attachments/assets/26e39d0b-2f94-4a6a-b1f4-fb185c9b6ddc)
+![Screenshot from 2024-12-02 18-51-19](https://github.com/user-attachments/assets/a08d811c-6525-4bac-a881-54909d0434c5)
 
 ---
 
